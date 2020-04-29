@@ -11,17 +11,16 @@ import org.junit.runner.RunWith;
    features = "src/test/resources/features",
         glue = "com/zerobank/stepdefinitions",
         dryRun = false,
-        strict = true,
-        tags = "",
+        strict = false,
+        tags = "@Loan",
         plugin = {
                 "html:target/default-report",
                 "json:target/cucumber1.json",
-                "rerun:target/rerun.txt"
-
-
+                "rerun:target/rerun.txt",
         }
 
-)
+
+  )
 
 
 public class CukesRunner {

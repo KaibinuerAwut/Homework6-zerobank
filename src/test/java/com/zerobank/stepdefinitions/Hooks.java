@@ -1,15 +1,15 @@
 package com.zerobank.stepdefinitions;
 
 import com.zerobank.utilities.Driver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
-    @Before()
+   @Before
     public void setup() {
 
         System.out.println("Test setup");
@@ -18,7 +18,7 @@ public class Hooks {
 
 
 
-    @After
+   @After
     public void tearDown(Scenario scenario) {
         //how to check if scenario failed
         if (scenario.isFailed()) {

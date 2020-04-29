@@ -3,6 +3,7 @@ package com.zerobank.pages;
 import com.zerobank.pages.PageBase;
 import com.zerobank.utilities.BrowserUtilities;
 import com.zerobank.utilities.ConfigurationReader;
+import com.zerobank.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,10 +40,29 @@ public class LoginPage extends PageBase {
         BrowserUtilities.waitForPageToLoad(10);
     }
 
-    public WebElement getWarning_message() {
-        return warning_message;
+
+    public void loggedIn() {
+
+
+        System.out.println("Open login page");
+        String URL = ConfigurationReader.getProperty("URL");
+        Driver.getDriver().get(URL);
+        login.click();
+        BrowserUtilities.wait(2);
+        username.sendKeys(ConfigurationReader.getProperty("username"));
+        password.sendKeys(ConfigurationReader.getProperty("password"), Keys.ENTER);
+        BrowserUtilities.waitForPageToLoad(10);
     }
 
+
+
+
+    public WebElement getWarning_message() {
+
+        return warning_message;
+
+
+    }
 
 
 }

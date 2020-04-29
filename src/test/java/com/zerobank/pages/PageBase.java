@@ -15,6 +15,7 @@ public abstract class PageBase {
 
 
     public PageBase() {
+
         PageFactory.initElements(driver, this);
     }
 

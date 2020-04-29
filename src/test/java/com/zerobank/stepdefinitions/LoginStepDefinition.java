@@ -30,18 +30,24 @@ public class LoginStepDefinition {
         String actualTitle=Driver.getDriver().getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
     }
+    @When("user log in with wrong credential")
+    public void user_log_in_with_wrong_credential() {
 
-    @When("user log in as a invalid user")
-    public void user_log_in_as_a_invalid_user() {
         loginPage.login2("xxx","yyy");
     }
 
-    @Then("user should verify the warning message")
-    public void user_should_verify_the_warning_message() {
-        String expected="Login and/or password are wrong.";
-        String actual= loginPage.getWarning_message().getText();
+    @Then("user should verify warning message")
+    public void user_should_verify_warning_message() {
+        String expected= "Login and/or password are wrong.";
+        String actual= loginPage.getWarning_message().getText().trim();
         System.out.println("actual = " + actual);
         Assert.assertEquals(expected,actual);
+
     }
 
+
+
+
 }
+
+
