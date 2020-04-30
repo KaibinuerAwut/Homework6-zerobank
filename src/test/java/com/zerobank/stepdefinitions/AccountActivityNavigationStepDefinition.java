@@ -89,8 +89,6 @@ public class AccountActivityNavigationStepDefinition {
 
     }
 
-
-
     @Then("Account drop down should have Loan selected")
     public void account_drop_down_should_have_Loan_selected() {
         accountActivityNavigationPage.loanSelected();

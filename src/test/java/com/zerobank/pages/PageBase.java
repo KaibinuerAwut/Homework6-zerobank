@@ -22,6 +22,7 @@ public abstract class PageBase {
     public void navigateTo(String tabName) {
         String tabNameXpath = "//a[@href='/bank/redirect.html?url=" + tabName + ".html']";
         WebElement tabElement = driver.findElement(By.xpath(tabNameXpath));
+        tabElement.click();
         BrowserUtilities.wait(2);
     }
 
